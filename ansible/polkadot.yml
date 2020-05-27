@@ -1,0 +1,39 @@
+---
+    - hosts: localhost
+      connection: local
+      gather_facts: no
+      become: true
+    
+      tasks:
+
+        - name: Add the user 'polkadot'
+          user:
+            name: polkadot
+
+        - name: Copy required project files
+          copy:
+            src: ../docker
+            dest: /home/polkadot/
+
+        - name: Tear down existing services
+          docker_compose:
+            project_src: /home/polkadot/docker
+            state: absent
+
+        - name: Create and start services
+          docker_compose:
+            project_src: /home/polkadot/docker
+          register: output
+
+        - debug:
+            var: output
+
+        - name: Run `docker-compose up` again
+          docker_compose:
+            project_src: /home/polkadot/docker
+            build: no
+          register: output
+
+        - debug:
+            var: output
+

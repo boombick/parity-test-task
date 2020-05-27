@@ -1,0 +1,25 @@
+version: '3.3'
+services:
+
+  prometheus:
+    build: './prometheus'
+    container_name: 'prometheus'
+    ports:
+      - '9090:9090'
+
+  grafana:
+    build: './grafana'
+    container_name: 'grafana'
+    ports:
+      - '3000:3000'
+
+  polkadot:
+    build: './polkadot'
+    container_name: polkadot
+    command: '/polkadot/polkadot --name PDAndreyTestNode --prometheus-external'
+    ports:
+      - "30333:30333"
+      - "9933:9933"
+      - "9944:9944"
+      - "9615:9615"
+
