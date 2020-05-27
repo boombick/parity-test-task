@@ -2,7 +2,7 @@ Hello!
 
 Here is the result of my test task. Let me explain the way I went.
 I used docker-compose for running a single PolkaDot node and join it to the public Kusama network.
-I didn't use exporters from the description of the task for scrape metrics from node because I've found a PolkaDot instance able to export its metrics itself.
+I didn't use exporters from the description of the task for scrape metrics from node because I've found that a PolkaDot instance can export its metrics itself.
 There is a preconfigured Prometheus and Grafana with visualization of the node metrics as well. 
 
 So, you can find provisioning tools in the ansible directory. Two playbooks there:
