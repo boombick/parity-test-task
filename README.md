@@ -13,5 +13,6 @@ I used `localhost` in all playbooks but it could be changed surely. If you got a
 When everything will be done, you can find tools to monitor the node there:
 * `http://localhost:3000` -- here is Grafana. Default credentials are `admin / admin`
 * `http://localhost:9090` -- here is web UI for Prometheus
+* And, for sure, the node will appears in the public telemetry `https://telemetry.polkadot.io/#list/Kusama` under the name `PDAndreyTestNode`
 
 I'm ready to answer to any questions :) Thank you!
